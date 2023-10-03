@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- navbar -->
+
+    <header>
+      <nav id="navbar" class="scroll-scale">
+        <a href="#home" class="name">Rupi<span>c</span></a>
+
+        <ul class="links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div id="menu"></div>
+      </nav>
+    </header>
+
+    <!-- home -->
+
+    <section id="home">
+      <div id="intro">
+        <h1>I'm Rupic</h1>
+
+        <p>
+          I am highly motivated Frontend Developer with a passion for creating
+          visually appealing and user-friendly web applications. Seeking a
+          challenging position that allows me to utilize my technical skills,
+          creativity, and problem-solving abilities to contribute to the
+          development of innovative digital experiences.
+        </p>
+        <div class="hire">
+          <button id="linkedin">
+            <i class="fa-brands fa-linkedin-in" style="color: white"></i>
+          </button>
+          <button id="github">
+            <i class="fa-brands fa-github" style="color: white"></i>
+          </button>
+        </div>
+
+        <button id="cv-btn">Download CV</button>
+        <a id="hidden-link" style="display: none"></a>
+      </div>
+
+      <div id="line"></div>
+      <div id="myimg"></div>
+    </section>
+
+    <!-- about -->
+
+    <section id="about">
+      <div id="about-img" class="scroll-left"></div>
+
+      <div class="myself scroll-right">
+        <h1>About Me</h1>
+        <p>
+          Lorem i dolor sit ametpsum consectetur adipisicing elit. Laborum
+          voluptatem, explicabo itaque magni deserunt officiis consectetur quod
+          iste suscipit obcaecati dolor in numquam dolorem similique dolore
+          exercitationem aperiam accusamus provident.In dolore illo deleniti
+          reprehenderit ea quaerat nobis quisquam dolor.
+        </p>
+
+        <button id="readmore">Read More</button>
+      </div>
+    </section>
+
+    <!-- skills -->
+
+    <section id="skills">
+      
+      <div class="circle-container scroll-left">
+        <div class="circle">
+          <h1>Skills</h1>
+        </div>
+
+        <div class="dot">
+          <small style="--i:0"></small>
+          <small style="--i:1"></small>
+          <small style="--i:2"></small>
+          <small style="--i:3"></small>
+          <small style="--i:4"></small>
+          <small style="--i:5"></small>
+          <small style="--i:6"></small>
+          <small style="--i:7"></small>
+          <small style="--i:8"></small>
+        </div>
+      </div>
+
+      <div class="icons scroll-scale">
+        <div id="html">
+          <img src="icons/html.svg" alt="html">
+          <small class="lorem">
+            <h4>HTML</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+          </small>
+        </div>
+        <div id="css">
+          <img src="icons/css.svg" alt="css">
+          <small class="lorem">
+            <h4>CSS</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+          </small>
+        </div>
+        <div id="js">
+          <img src="icons/js.svg" alt="js">
+          <small class="lorem">
+            <h4>JavaScript</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+          </small>
+        </div>
+        <div id="react">
+          <img src="icons/react.svg" alt="react">
+          <small class="lorem">
+            <h4>REACT</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+          </small>
+        </div>
+        <div id="php">
+          <img src="icons/php.svg" alt="php">
+          <small class="lorem">
+            <h4>PHP</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+          </small>
+        </div>
+        <div id="laravel">
+          <img src="icons/laravel.svg" alt="laravel">
+          <small class="lorem">
+            <h4>LARAVEL</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+          </small>
+        </div>
+        <div id="database">
+          <img src="icons/my_sql.svg" alt="mySQL">
+          <small class="lorem">
+            <h4>MySQL</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+          </small>
+        </div>
+      </div>
+
+      <div class="show scroll-right">
+        <small>&times;</small>
+        <div class="show-icon">
+          <img src="icons/react.svg" alt="react">
+        </div>
+        <div class="title-body">
+          <h1 class="icon-title">REACT</h1>
+          <p class="body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, asperiores. Cum dicta eos aspernatur quibusdam magnam illum dolores ipsum, id amet distinctio! Accusantium fugiat alias possimus velit. Unde, quos corporis!</p>
+        </div>
+      </div>
+      
+    </section>
+
+    <!-- portfolio -->
+
+    <section id="portfolio">
+      <h1 class="scroll-scale">Portfolio</h1>
+
+      <div class="card-container scroll-scale">
+        <button id="prev"><i class="fa-solid fa-angles-left"></i></button>
+
+        <div class="card-slider">
+          <div class="card">
+            <img src="images/musc.png" alt="music" draggable="false" />
+          </div>
+          <div class="card">
+            <img
+              src="images/portfolio_bg.png"
+              alt="portfolio"
+              draggable="false"
+            />
+          </div>
+          <div class="card">
+            <img src="images/quiz_bg.png" alt="quiz_app" draggable="false" />
+          </div>
+          <div class="card">
+            <img
+              src="images/tic_tac_toe_bg.png"
+              alt="tic_tac_toe_app"
+              draggable="false"
+            />
+          </div>
+          <div class="card">
+            <img src="images/todo_list_bg.png" alt="todo" draggable="false" />
+          </div>
+          <div class="card">
+            <img
+              src="images/weather_app.png"
+              alt="weather_app"
+              draggable="false"
+            />
+          </div>
+        </div>
+
+        <button id="next"><i class="fa-solid fa-angles-right"></i></button>
+      </div>
+    </section>
+
+    <!-- contact -->
+
+    <section id="contact">
+      <form action=""id="contact-me" class="scroll-bottom">
+        <h2>Contact Me</h2>
+
+        <label for="name">Name :</label><br />
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Name"
+          autocomplete="off"
+          required
+        /><br />
+
+        <label for="email">Email :</label><br />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email"
+          required
+        /><br />
+
+        <label for="phone-num">Phone :</label><br />
+        <input type="text" name="phone-num" id="phone-num" placeholder="Phone Number" /><br />
+
+        <label for="message">Message :</label><br />
+        <textarea
+          name="message"
+          id="message"
+          rows="3"
+          placeholder="Leave a message for me"
+        ></textarea
+        ><br />
+
+        <button type="submit" id="send">Send Message</button>
+        <div class="confirmation-msg"></div>
+      </form>
+
+      <div id="contact-info" class="scroll-bottom">
+        <h2>Contact info</h2>
+
+        <p>Phone : <br /><small>+95 9968 421 586</small></p>
+        <p>Email : <br /><small>swanhtetpaing240@gmail.com</small></p>
+        <p>
+          Address : <br /><small
+            >Mingalar Theike Di Street, Dawbon, Yangon</small
+          >
+        </p>
+
+        <div class="social">
+          <button id="fb">
+            <i class="fa-brands fa-facebook-f" style="color: white"></i>
+          </button>
+          <button id="insta">
+            <i class="fa-brands fa-instagram" style="color: white"></i>
+          </button>
+          <button id="mail">
+            <i class="fa-solid fa-envelope" style="color: white"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; Portfolio Website</p>
+      <button id="go-top"><i class="fas fa-arrow-up"></i></button>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
