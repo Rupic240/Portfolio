@@ -263,7 +263,9 @@ body {
     position: relative;
     width: 3px;
     height: 200px;
+    border-radius: 5px;
     background: var(--cyan);
+    filter: blur(1.1px);
 }
 
 /*! about -------------------------------------------------------------- */
