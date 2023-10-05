@@ -17,10 +17,10 @@
     <!-- navbar -->
 
     <header>
-      <nav id="navbar" class="scroll-scale">
+      <nav id="navbar">
         <a href="#home" class="name">Rupi<span>c</span></a>
 
-        <ul class="links">
+        <ul class="links scroll-scale">
           <li><a href="#home" class="active">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
@@ -45,17 +45,20 @@
           creativity, and problem-solving abilities to contribute to the
           development of innovative digital experiences.
         </p>
-        <div class="hire">
-          <button id="linkedin">
-            <i class="fa-brands fa-linkedin-in" style="color: white"></i>
-          </button>
-          <button id="github">
-            <i class="fa-brands fa-github" style="color: white"></i>
-          </button>
-        </div>
 
-        <button id="cv-btn">Download CV</button>
-        <a id="hidden-link" style="display: none"></a>
+        <div class="home-btn-container">
+          <div class="hire">
+            <button id="linkedin">
+              <i class="fa-brands fa-linkedin-in" style="color: white"></i>
+            </button>
+            <button id="github">
+              <i class="fa-brands fa-github" style="color: white"></i>
+            </button>
+          </div>
+  
+          <button class="btn" id="cv-btn">Download CV</button>
+          <a id="hidden-link" style="display: none"></a>
+        </div>
       </div>
 
       <div id="line"></div>
@@ -77,7 +80,7 @@
           reprehenderit ea quaerat nobis quisquam dolor.
         </p>
 
-        <button id="readmore">Read More</button>
+        <button class="btn">Read More</button>
       </div>
     </section>
 
@@ -104,49 +107,49 @@
       </div>
 
       <div class="icons scroll-scale">
-        <div id="html">
+        <div class="html" id="1">
           <img src="icons/html.svg" alt="html">
           <small class="lorem">
             <h4>HTML</h4>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
           </small>
         </div>
-        <div id="css">
+        <div class="css" id="2">
           <img src="icons/css.svg" alt="css">
           <small class="lorem">
             <h4>CSS</h4>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
           </small>
         </div>
-        <div id="js">
+        <div class="js" id="3">
           <img src="icons/js.svg" alt="js">
           <small class="lorem">
             <h4>JavaScript</h4>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
           </small>
         </div>
-        <div id="react">
+        <div class="react" id="4">
           <img src="icons/react.svg" alt="react">
           <small class="lorem">
             <h4>REACT</h4>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
           </small>
         </div>
-        <div id="php">
+        <div class="php" id="5">
           <img src="icons/php.svg" alt="php">
           <small class="lorem">
             <h4>PHP</h4>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
           </small>
         </div>
-        <div id="laravel">
+        <div class="laravel" id="6">
           <img src="icons/laravel.svg" alt="laravel">
           <small class="lorem">
             <h4>LARAVEL</h4>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
           </small>
         </div>
-        <div id="database">
+        <div class="database" id="7">
           <img src="icons/my_sql.svg" alt="mySQL">
           <small class="lorem">
             <h4>MySQL</h4>
@@ -250,7 +253,7 @@
         ></textarea
         ><br />
 
-        <button type="submit" id="send">Send Message</button>
+        <button type="submit" class="btn">Send Message</button>
         <div class="confirmation-msg"></div>
       </form>
 

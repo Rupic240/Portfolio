@@ -102,6 +102,93 @@ cv.addEventListener('click', downloadCv);
 
 //! show_skills................................................................
 
+const showLang = [
+  {
+    id: '1',
+    logo: 'icons/html.svg',
+    name: 'HTML',
+    content:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, asperiores. Cum dicta eos aspernatur quibusdam magnam illum dolores ipsum, id amet distinctio! Accusantium fugiat alias',
+    style: {
+      shadow: `5px -5px 30px #FFD63C,
+              -5px 5px 20px #F9B118`,
+      bg: `linear-gradient(145deg, #FFD63C 20%, #F9B118 80%)`,
+    },
+  },
+  {
+    id: '2',
+    logo: 'icons/css.svg',
+    name: 'CSS',
+    content:
+      'Wit amet consectetur adipisicing elit. Lorem ipsum dolorNesciunt, asperiores. Cum dicta eos aspernatur quibusdam magnam amet distinctio! Accusantium fugiat alias possimus velit. Unde, quos corporis',
+    style: {
+      shadow: `5px -5px 30px #F99F1A,
+                                  -5px 5px 20px #F16123`,
+      bg: `linear-gradient(145deg, #F99F1A 20%, #F16123 80%)`,
+    },
+  },
+  {
+    id: '3',
+    logo: 'icons/js.svg',
+    name: 'JavaScript',
+    content:
+      'Lor possimus velit. Unde, quos corporis! sit amet consectetur adipisicing elit. Nesciunt, asperiores. Cum dicta eos aspernatur dolores ipsum, id Lorem ipsum do amet distinctio! Accusantium fugiat alias possimus velit. Unde, quos corporis',
+    style: {
+      shadow: `5px -5px 30px #B84A87,
+              -5px 5px 20px #A62290`,
+      bg: `linear-gradient(145deg, #B84A87 20%, #A62290 80%)`,
+    },
+  },
+  {
+    id: '4',
+    logo: 'icons/react.svg',
+    name: 'REACT',
+    content:
+      'Dolor sit amet consectetur adipisicing elit. Lorem ipsum d Nesciunt, asperiores. Cum dicta eos aspernatur illum dolores ipsum, id magnam illum dolores ipsum, id amet distinctio! Accusantium fugiat alias possimus velit. Unde, quos corporis',
+    style: {
+      shadow: `5px -5px 30px #67559F,
+              -5px 5px 20px #473E8F`,
+      bg: `linear-gradient(145deg, #67559F 20%, #473E8F 80%)`,
+    },
+  },
+  {
+    id: '5',
+    logo: 'icons/php.svg',
+    name: 'PHP',
+    content:
+      'Nesciunt, asperiores. Cum dicta eos aspernatur quibusdam magnam illum dolores ipsum,Lorem ipsum dolor sit amet consectetur adipisicing elit. od amet distinctio! Accusantium fugiat alias possimus',
+    style: {
+      shadow: `5px -5px 30px #01A8CB,
+              -5px 5px 20px #00A8A8`,
+      bg: `linear-gradient(145deg, #01A8CB 30%, #00A8A8 70%)`,
+    },
+  },
+  {
+    id: '6',
+    logo: 'icons/laravel.svg',
+    name: 'LARAVEL',
+    content:
+      'Amet consectetur adipisicing elit. Nesciunt, asperiores. Cum dicta eos aspernatur quibusdam ipsum, id amet distinctio! Lorem ipsum dolor sit Accusantium fugiat alias possimus velit. Unde, quos ',
+    style: {
+      shadow: `5px -5px 30px #A5B726,
+              -5px 5px 20px #61BA47`,
+      bg: `linear-gradient(145deg, #A5B726 30%, #61BA47 70%)`,
+    },
+  },
+  {
+    id: '7',
+    logo: 'icons/my_sql.svg',
+    name: 'MySQL',
+    content:
+      'Qdipisicing elit. Nesciunt, asperiores. Cum dicta eos Lorem ipsum dolor sit amet consectetur a illum dolores ipsum, id amet distinctio! Accusantium fugiat alias possimus velit. Unde',
+    style: {
+      shadow: `5px -5px 30px #748c96,
+              -5px 5px 20px #323786`,
+      bg: `linear-gradient(145deg, #748c96 20%, #323786  80%)`,
+    },
+  },
+];
+
 const iconDiv = document.querySelectorAll('.icons div');
 const showIcon = document.querySelector('.show-icon');
 const iconContent = document.querySelector('.body');
@@ -113,73 +200,17 @@ const hideShow = document.querySelector('.show small');
 
 iconDiv.forEach((iconBtn) => {
   iconBtn.addEventListener('click', () => {
-    switch (iconBtn.id) {
-      case 'html':
-        showBg.style.backgroundImage = `linear-gradient(145deg, #FFD63C 20%, #F9B118 80%)`;
-        showBg.style.boxShadow = `5px -5px 30px #FFD63C,
-                                  -5px 5px 20px #F9B118`;
-        showIcon.innerHTML = `<img src="icons/html.svg">`;
-        iconTitle.innerHTML = 'HTML';
-        iconContent.innerHTML =
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, asperiores. Cum dicta eos aspernatur quibusdam magnam illum dolores ipsum, id amet distinctio! Accusantium fugiat alias';
-        break;
-      case 'css':
-        showBg.style.backgroundImage = `linear-gradient(145deg, #F99F1A 20%, #F16123 80%)`;
-        showBg.style.boxShadow = `5px -5px 30px #F99F1A,
-                                  -5px 5px 20px #F16123`;
-        showIcon.innerHTML = `<img src="icons/css.svg">`;
-        iconTitle.innerHTML = 'CSS';
-        iconContent.innerHTML =
-          'Wit amet consectetur adipisicing elit. Lorem ipsum dolorNesciunt, asperiores. Cum dicta eos aspernatur quibusdam magnam amet distinctio! Accusantium fugiat alias possimus velit. Unde, quos corporis!';
-        break;
-      case 'js':
-        showBg.style.backgroundImage = `linear-gradient(145deg, #B84A87 20%, #A62290 80%)`;
-        showBg.style.boxShadow = `5px -5px 30px #B84A87,
-                                  -5px 5px 20px #A62290`;
-        showIcon.innerHTML = `<img src="icons/js.svg">`;
-        iconTitle.innerHTML = 'JavaScript';
-        iconContent.innerHTML =
-          'Lor possimus velit. Unde, quos corporis! sit amet consectetur adipisicing elit. Nesciunt, asperiores. Cum dicta eos aspernatur dolores ipsum, id Lorem ipsum do amet distinctio! Accusantium fugiat alias possimus velit. Unde, quos corporis!';
-        break;
-      case 'react':
-        showBg.style.backgroundImage = `linear-gradient(145deg, #67559F 20%, #473E8F 80%)`;
-        showBg.style.boxShadow = `5px -5px 30px #67559F,
-                                  -5px 5px 20px #473E8F`;
-        showIcon.innerHTML = `<img src="icons/react.svg">`;
-        iconTitle.innerHTML = 'REACT';
-        iconContent.innerHTML =
-          'Dolor sit amet consectetur adipisicing elit. Lorem ipsum d Nesciunt, asperiores. Cum dicta eos aspernatur illum dolores ipsum, id magnam illum dolores ipsum, id amet distinctio! Accusantium fugiat alias possimus velit. Unde, quos corporis!';
-        break;
-      case 'php':
-        showBg.style.backgroundImage = `linear-gradient(145deg, #01A8CB 30%, #00A8A8 70%)`;
-        showBg.style.boxShadow = `5px -5px 30px #01A8CB,
-                                  -5px 5px 20px #00A8A8`;
-        showIcon.innerHTML = `<img src="icons/php.svg">`;
-        iconTitle.innerHTML = 'PHP';
-        iconContent.innerHTML =
-          'Nesciunt, asperiores. Cum dicta eos aspernatur quibusdam magnam illum dolores ipsum,Lorem ipsum dolor sit amet consectetur adipisicing elit. od amet distinctio! Accusantium fugiat alias possimus';
-        break;
-      case 'laravel':
-        showBg.style.backgroundImage = `linear-gradient(145deg, #A5B726 30%, #61BA47 70%)`;
-        showBg.style.boxShadow = `5px -5px 30px #A5B726,
-                                  -5px 5px 20px #61BA47`;
-        showIcon.innerHTML = `<img src="icons/laravel.svg">`;
-        iconTitle.innerHTML = 'LARAVEL';
-        iconContent.innerHTML =
-          'Amet consectetur adipisicing elit. Nesciunt, asperiores. Cum dicta eos aspernatur quibusdam ipsum, id amet distinctio! Lorem ipsum dolor sit Accusantium fugiat alias possimus velit. Unde, quos corporis!';
-        break;
-      case 'database':
-        showBg.style.backgroundImage = `linear-gradient(145deg, #748c96 20%, #323786  80%)`;
-        showBg.style.boxShadow = `5px -5px 30px #748c96,
-                                    -5px 5px 20px #323786`;
-        showIcon.innerHTML = `<img src="icons/my_sql.svg">`;
-        iconTitle.innerHTML = 'MySQL';
-        iconContent.innerHTML =
-          'Qdipisicing elit. Nesciunt, asperiores. Cum dicta eos Lorem ipsum dolor sit amet consectetur a illum dolores ipsum, id amet distinctio! Accusantium fugiat alias possimus velit. Unde, quos corporis!';
-        break;
-      default:
-        break;
-    }
+    
+    showLang.map(lang => {
+      if (lang.id === iconBtn.id) {
+        showBg.style.backgroundImage = `${lang.style.bg}`;
+        showBg.style.boxShadow = `${lang.style.shadow}`;
+        showIcon.innerHTML = `<img src="${lang.logo}">`;
+        iconTitle.innerHTML = `${lang.name}`;
+        iconContent.innerHTML = `${lang.content}`;
+      }
+    })
+        
 
     if (skillSection.offsetWidth <= 425) {
       showBg.classList.add('active');

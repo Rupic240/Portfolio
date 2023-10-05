@@ -181,12 +181,20 @@ body {
 
 #intro p {
     color: var(--white);
+    margin: 15px 0;
+}
+
+.home-btn-container {
+
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hire {
-    margin-top: 10px;
     display: flex;
-    align-items: center;
     gap: 20px;
 }
 
@@ -213,7 +221,7 @@ body {
     scale: 1.1;
 }
 
-#cv-btn {
+.btn {
     width: 130px;
     height: 40px;
     border: none;
@@ -228,7 +236,7 @@ body {
     margin: 25px 0;
 }
   
-#cv-btn::before {
+.btn::before {
     content: '';
     width: 0;
     height: 3em;
@@ -241,12 +249,12 @@ body {
     mix-blend-mode: difference;
 }
   
-#cv-btn:hover::before {
+.btn:hover::before {
     width: 100%;
     box-shadow: 0px 0px 15px var(--wheat);
 }
   
-#cv-btn:active {
+.btn:active {
     transform: translate(5px,5px);
     transition-duration: .3s;
 }
@@ -301,43 +309,6 @@ body {
     margin: 15px 0;
 }
 
-#about .myself #readmore {
-    cursor: pointer;
-    position: relative;
-    width: 150px;
-    height: 40px;
-    margin: 15px 0;
-    font-size: 1em;
-    border: none;
-    border-radius: 5px;
-    color: var(--white);
-    background: var(--black);
-    overflow: hidden;
-}
-
-#about .myself #readmore::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: var(--white);
-    mix-blend-mode: difference;
-    border-radius: 5px;
-    transition: .5s ease;
-}
-
-
-#about .myself #readmore:hover::before {
-    width: 100%;
-}
-
-
-#about .myself #readmore:active {
-    transform: translate(5px,5px);
-    transition-duration: .3s;
-}
 
 /*! skills -------------------------------------------------------------- */
 
@@ -488,41 +459,41 @@ body {
     font-size: .8em;
 }
 
-#html {
+.html {
     background-image: linear-gradient(145deg, #FFD63C 20%, #F9B118 80%);
 }
 
-#css {
+.css {
     background-image: linear-gradient(145deg, #F99F1A 20%, #F16123 80%);
 }
 
-#js {
+.js {
     background-image: linear-gradient(145deg, #B84A87 20%, #A62290 80%);
 }
 
-#react {
+.react {
     background-image: linear-gradient(145deg, #67559F 20%, #473E8F 80%);
 }
 
-#php {
+.php {
     background-image: linear-gradient(145deg, #01A8CB 30%, #00A8A8 70%);
 }
 
-#laravel {
+.laravel {
     background-image: linear-gradient(145deg, #A5B726 30%, #61BA47 70%);
 }
 
-#database {
+.database {
     background-image: linear-gradient(145deg, #748c96 20%, #323786  80%);
 }
 
-#html::before,
-#css::before,
-#js::before,
-#react::before,
-#php::before,
-#laravel::before,
-#database::before {
+.html::before,
+.css::before,
+.js::before,
+.react::before,
+.php::before,
+.laravel::before,
+.database::before {
     position: absolute;
     right: 105%;
     content: '';
@@ -531,29 +502,29 @@ body {
     border-radius: 5px;
 }
 
-#html::before,
-#database::before {
+.html::before,
+.database::before {
     width: 80px;
 }
 
-#css::before,
-#laravel::before {
+.css::before,
+.laravel::before {
     width: 60px;
 }
 
-#js::before,
-#php::before {
+.js::before,
+.php::before {
     width: 45px;
 }
 
-#react::before {
+.react::before {
     width: 35px;
 }
 
-#html::after,
-#css::after,
-#laravel::after,
-#database::after {
+.html::after,
+.css::after,
+.laravel::after,
+.database::after {
     position: absolute;
     content: '';
     height: 2px;
@@ -561,26 +532,26 @@ body {
     border-radius: 5px;
 }
 
-#html::after {
+.html::after {
     right: 135.5%;
     top: 73%;
     width: 65px;
     transform: rotate(-25deg);
 }
-#database::after {
+.database::after {
     bottom: 73%;
     right: 135.5%;
     width: 65px;
     transform: rotate(25deg);
 }
 
-#css::after {
+.css::after {
     top: 58%;
     right: 128%;
     width: 30px;
     transform: rotate(-23deg);
 }
-#laravel::after {
+.laravel::after {
     bottom: 58%;
     right: 128%;
     width: 30px;
@@ -782,42 +753,6 @@ textarea::-webkit-scrollbar {
     display: none;
 }
 
-#send {
-    position: relative;
-    width: 180px;
-    height: 40px;
-    border: none;
-    background: var(--black);
-    cursor: pointer;
-    color: var(--white);
-    font-size: 1em;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-#send::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: '';
-    width: 0;
-    height: 100%;
-    border-radius: 5px;
-    background: var(--white);
-    transition: .5s;
-    mix-blend-mode: difference;
-}
-
-#send:hover::before {
-    color: var(--black);
-    width: 100%;
-}
-
-#send:active {
-    transform: translate(5px,5px);
-    transition-duration: .3s;
-}
-
 #contact-info {
     height: 430px;
 }
@@ -949,47 +884,59 @@ footer #go-top:hover {
 
 @media (max-width: 1025px) {
 
+    #home {
+        padding: 5%;
+    }
+
+    #line {
+        display: none;
+    }
+
+    #about {
+        padding: 0;
+    }
+
     .show {
         display: none;
     }
 
-    #html::before,
-    #css::before,
-    #js::before,
-    #react::before,
-    #php::before,
-    #laravel::before,
-    #database::before {
+    .html::before,
+    .css::before,
+    .js::before,
+    .react::before,
+    .php::before,
+    .laravel::before,
+    .database::before {
         right: 115%;
     }
 
-    #react::before {
+    .react::before {
         width: 60px;
     }
 
-    #js::before,
-    #php::before {
+    .js::before,
+    .php::before {
         width: 80px;
     }
         
-    #html::after {
+    .html::after {
         right: 145.4%;
         top: 67.5%;
         transform: rotate(-20deg);
     }
-    #database::after {
+    .database::after {
         right: 145.4%;
         bottom: 67.5%;
         transform: rotate(20deg);
     }
 
-    #css::after {
+    .css::after {
         top: 56.7%;
         right: 138%;
         width: 60px;
         transform: rotate(-10deg)
     }
-    #laravel::after {
+    .laravel::after {
         bottom: 56.7%;
         right: 138%;
         width: 60px;
@@ -1077,46 +1024,46 @@ footer #go-top:hover {
         height: 55px;
     }
 
-    #html::before,
-    #css::before,
-    #js::before,
-    #react::before,
-    #php::before,
-    #laravel::before,
-    #database::before {
+    .html::before,
+    .css::before,
+    .js::before,
+    .react::before,
+    .php::before,
+    .laravel::before,
+    .database::before {
         right: 105%;
     }
 
-    #react::before {
+    .react::before {
         width: 40px;
     }
 
-    #js::before,
-    #php::before {
+    .js::before,
+    .php::before {
         width: 60px;
     }
         
-    #html::after {
+    .html::after {
         right: 135.4%;
         top: 65.5%;
         width: 50px;
         transform: rotate(-25deg);
     }
-    #database::after {
+    .database::after {
         right: 135.4%;
         bottom: 66.5%;
         width: 50px;
         transform: rotate(25deg);
     }
 
-    #css::after {
+    .css::after {
         top: 56.7%;
         right: 128%;
         width: 33px;
         transform: rotate(-18deg);
     }
 
-    #laravel::after {
+    .laravel::after {
         bottom: 56.7%;
         right: 128%;
         width: 34px;
@@ -1225,6 +1172,11 @@ footer #go-top:hover {
         flex-direction: column;
     }
 
+    .home-btn-container {
+        align-items: flex-end;
+        margin-right: 10px;
+    }
+
     #intro {
         margin-top: 50px;
     }
@@ -1233,14 +1185,6 @@ footer #go-top:hover {
         margin-top: 10px;
         margin-bottom: 20px;
         font-size: 1.1em;
-    }
-
-    .hire {
-        margin-left: 70%;
-    }
-
-    #cv-btn {
-        margin-left: 60%;
     }
 
     #line,
@@ -1352,10 +1296,6 @@ footer #go-top:hover {
         font-size: 2em;
     }
 
-    #send {
-        margin-left: 42%;
-    }
-
     #contact-info {
         height: auto;
     }
@@ -1371,7 +1311,7 @@ footer #go-top:hover {
     }
 
     .social {
-        margin-bottom: 0;
+        margin-top: 0;
     }
 }
 
@@ -1383,10 +1323,6 @@ footer #go-top:hover {
 
     .hire{
         margin-left: 60%;
-    }
-
-    #cv-btn {
-        margin-left: 45%;
     }
 
     #about .myself p {
@@ -1415,10 +1351,6 @@ footer #go-top:hover {
     #contact-me input, textarea {
         width: 18em;
     }
-
-    #send {
-        margin-left: 38%;
-    }
     
 }
 
@@ -1430,4 +1362,5 @@ footer #go-top:hover {
     #contact-me textarea {
         height: 32px;
     }
+
 }
