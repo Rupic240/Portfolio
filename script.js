@@ -3,18 +3,30 @@
 const menu = document.getElementById('menu');
 const links = document.querySelector('.links');
 const hide = document.querySelectorAll('.links li');
+const nav = document.getElementById('navbar');
 
 menu.addEventListener('click', () => {
   links.classList.toggle('active');
   menu.classList.toggle('active');
+  nav.classList.toggle('show-animation');
 });
 
 hide.forEach((hideLinks) => {
   hideLinks.addEventListener('click', () => {
     links.classList.remove('active');
     menu.classList.remove('active');
+    nav.classList.remove('show-animation');
   });
 });
+
+//! Show Navbar when mouseover............................................. 
+
+document.addEventListener('mousemove', (e) => {
+  let mousePosY = e.clientY;
+  if (mousePosY <= 50) {
+    nav.style.top = 0;
+  } 
+})
 
 //! parallax............................................................
 
@@ -26,19 +38,30 @@ const aboutImg = document.getElementById('about-img');
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.links li a');
 
-window.addEventListener('scroll', () => {
-  const val = window.scrollY;
+let prevScroll = 0;
 
-  moveRight.style.right = val * -0.3 + 'px';
-  moveLeft.style.left = val * -0.3 + 'px';
-  line.style.top = val * -0.4 + 'px';
+window.addEventListener('scroll', () => {
+  let scrollVal = window.scrollY;
+
+  if (scrollVal < prevScroll) {
+    nav.style.top = 0;
+  } else {
+    nav.style.top = '-60px';
+  }
+
+  
+  prevScroll = scrollVal;
+  
+  moveRight.style.right = scrollVal * -0.3 + 'px';
+  moveLeft.style.left = scrollVal * -0.3 + 'px';
+  line.style.top = scrollVal * -0.4 + 'px';
 
   sections.forEach((sec) => {
     let ofsTop = sec.offsetTop - 20;
     let ofsHeight = sec.offsetHeight - 150;
     let act = sec.getAttribute('id');
 
-    if (val >= ofsTop && val <= ofsTop + ofsHeight) {
+    if (scrollVal >= ofsTop && scrollVal <= ofsTop + ofsHeight) {
       navLinks.forEach((links) => {
         links.classList.remove('active');
         document
@@ -282,6 +305,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+
+  const navAnimation = () => {
+
+    let interval;
+
+    const startAni = () => {
+      interval = setInterval(() => {
+        cardSlider.scrollLeft += cardWidth;
+      }, 3000);
+    }
+    startAni();
+
+    const stopAni = () => {
+      clearInterval(interval);
+    }
+
+    cardSlider.addEventListener('mouseover', stopAni);
+    cardSlider.addEventListener('mouseleave', startAni);
+
+  };
+
+  navAnimation();
+  
   cardSlider.addEventListener('mousedown', startDraging);
   cardSlider.addEventListener('mousemove', draging);
   cardSlider.addEventListener('mouseup', stopDraging);
