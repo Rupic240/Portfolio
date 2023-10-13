@@ -323,6 +323,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cardSlider.addEventListener('mouseover', stopAni);
     cardSlider.addEventListener('mouseleave', startAni);
+    moveBtn.forEach(btn => {
+      btn.addEventListener('mouseover', stopAni);
+      btn.addEventListener('mouseleave', startAni);
+    })
 
   };
 
