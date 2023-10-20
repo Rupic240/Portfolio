@@ -49,6 +49,13 @@ window.addEventListener('scroll', () => {
     nav.style.top = '-60px';
   }
 
+  //! Remove active menu when scrolling..................................................
+
+  if (scrollVal) {
+    links.classList.remove('active');
+    menu.classList.remove('active');
+  }
+
   
   prevScroll = scrollVal;
   
@@ -235,7 +242,7 @@ iconDiv.forEach((iconBtn) => {
     })
         
 
-    if (skillSection.offsetWidth <= 425) {
+    if (skillSection.offsetWidth <= 1025) {
       showBg.classList.add('active');
       showBg.classList.remove('scroll-right');
       showBg.classList.add('scroll-scale');
