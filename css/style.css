@@ -624,89 +624,29 @@ body {
     margin-bottom: 3rem;
 }
 
-.card-container {
+swiper-container {
     width: 100%;
-    max-width: 1000px;
-    position: relative;
+    height: auto;
+    padding: 0 5%;
+}
+
+swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin: 1rem 0;
-    padding: 0 1.5rem;
-}
-
-#prev,
-#next {
-    cursor: pointer;
-    position: absolute;
-    z-index: 100;
-    width: 40px;
-    height: 40px;
-    color: var(--white);
-    background: var(--lightcyan);
-    border-radius: 50%;
-    border: none;
-    font-size: 1em;
-    font-weight: bold;
-    line-height: 10px;
-    transition: .5s ease-in-out;
-}
-
-#prev {
-    left: 0;
-}
-
-#next {
-    right: 5px;
-}
-
-#prev:hover,
-#next:hover {
-    scale: 1.1;
-    background: cyan;
-}
-
-.card-slider {
-    display: grid;
-    grid-auto-flow: column;
-    gap: 10px;
-    grid-auto-columns: calc((100% / 3) - 8px);
-    scroll-snap-type: x mandatory;
-    overflow-x: auto;
-    user-select: none;
-}
-
-.card-slider.dragging .card {
-    cursor: grabbing;
-    user-select: none;
-}
-
-.card-slider.no-tran {
-    scroll-behavior: auto;
-}
-
-.card-slider::-webkit-scrollbar {
-    display: none;
-}
-
-.card {
-    cursor: pointer;
-    scroll-snap-align: start;
-    width: 100%;
-    height: 260px;
-    border-radius: 9px;
+    align-items: center;
+    height: 270px;
+    border-radius: 8px;
     overflow: hidden;
 }
 
-.card img {
+swiper-slide img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: .5s ease-out;
-}
-
-.card img:hover {
-    scale: 1.1;
 }
 
 
@@ -718,7 +658,7 @@ body {
     padding: 25px 10%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     overflow: hidden;
 }
 
@@ -853,7 +793,7 @@ footer #go-top:hover {
 .scroll-scale {
     opacity: 0;
     transform: scale(.9);
-    transition: 1.5s ease-out;
+    transition: 2s ease-out;
 }
 
 .scroll-bottom {
@@ -883,7 +823,7 @@ footer #go-top:hover {
 
 /*! Responsive ------------------------------------------------------------------- */
 
-@media (max-width: 1025px) {
+@media (max-width: 1270px) {
 
     #home {
         padding: 5%;
@@ -897,18 +837,10 @@ footer #go-top:hover {
         padding: 0;
     }
 
-    .show {
+    .circle-container,
+    .icons div::before,
+    .icons div::after {
         display: none;
-        position: absolute;
-    }
-
-    .show small {
-        display: block;
-        cursor: pointer;
-        position: absolute;
-        font-size: 3.4em;
-        top: -10px;
-        right: 25px;
     }
 
     .show.active {
@@ -958,9 +890,13 @@ footer #go-top:hover {
         transform: rotate(10deg)
     }
 
+    #contact {
+        padding: 25px 5%;
+    }
+
 }
 
-@media (max-width: 770px) {
+@media (max-width: 800px) {
     
     #navbar .links {
         position: absolute;
@@ -1042,12 +978,12 @@ footer #go-top:hover {
 
     #menu.active::before {
         top: 0;
-        transform: rotate(-45deg);
+        transform: rotate(-45deg) translateY(-4px);
     }
-
+    
     #menu.active::after {
         bottom: 0;
-        transform: rotate(45deg);
+        transform: rotate(45deg) translateY(4px);
     }
     
     #home {
@@ -1086,6 +1022,20 @@ footer #go-top:hover {
     .circle-container::before {
         width: 140px;
         height: 100%;
+    }
+
+    .show {
+        display: none;
+        position: absolute;
+    }
+
+    .show small {
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        font-size: 3.4em;
+        top: -10px;
+        right: 25px;
     }
 
     .dot small {
@@ -1173,31 +1123,14 @@ footer #go-top:hover {
         font-size: 2em;
     }
 
-    .card-container {
-        padding: 0 5%;
-    }
-
-    .card {
-        height: 200px;
-    }
-
-    #prev {
-        left: 20px;
-    }
-
-    #next {
-        right: 20px;
-    }
-
     #contact {
         flex-direction: row;
-        justify-content: center;
         padding: 0 5%;
     }
 
     #contact-me {
         font-size: 1em;
-        width: 100%;
+        width: auto;
     }
 
     #contact-me h2 {
@@ -1227,7 +1160,7 @@ footer #go-top:hover {
 
 }
 
-@media (max-width: 430px) {
+@media (max-width: 640px) {
 
     #home {
         flex-direction: column;
@@ -1254,7 +1187,7 @@ footer #go-top:hover {
     }
 
     #about {
-        padding: 15% 0;
+        padding: 5% 0;
         flex-direction: column;
     }
 
@@ -1278,11 +1211,11 @@ footer #go-top:hover {
     }
 
     .show {
-        width: 340px;
+        width: auto;
         height: 300px;
         position: absolute;
         flex-direction: column;
-        padding: 15px 5px;
+        padding: 13px;
     }
     
     .show-icon {
@@ -1312,31 +1245,21 @@ footer #go-top:hover {
         font-size: 2em;
     }
 
-    .card-container {
-        padding: 0 2.4rem;
-    }
-
-    .card-slider {
-        grid-auto-columns: calc((100% / 2) - 5px);
-    }
-
-    #prev {
-        left: 20px;
-    }
-
-    #next {
-        right: 20px;
-    }
-
     #contact {
         flex-direction: column;
-        padding: 0 10%;
+        justify-content: center;
+        padding: 0 15px;
     }
 
     #contact-me {
         font-size: 1em;
         width: 100%;
-        margin: 0 auto;
+        margin: 0 0;
+    }
+    
+    #contact-me input, textarea {
+       width: 100%;
+       margin: 0;
     }
 
     #contact-me h2 {
@@ -1377,38 +1300,4 @@ footer #go-top:hover {
         margin: 0;
         padding: 0 10%;
     }
-
-    .card-slider {
-        grid-auto-columns: 100%;
-    }
-
-    #next {
-        right: 20px;
-    }
-
-    #contact-me {
-        margin-top: 3rem;
-        font-size: 1em;
-        width: 100%;
-    }
-
-    #contact-me h2 {
-        font-size: 2em;
-    }
-
-    #contact-me input, textarea {
-        width: 18em;
-    }
-    
-}
-
-@media (max-width: 300px) {
-    #contact-me input, textarea {
-        width: 16em;
-    }
-
-    #contact-me textarea {
-        height: 32px;
-    }
-
 }

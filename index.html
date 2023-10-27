@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -55,7 +55,7 @@
               <i class="fa-brands fa-github" style="color: white"></i>
             </button>
           </div>
-  
+
           <button class="btn" id="cv-btn">Download CV</button>
           <a id="hidden-link" style="display: none"></a>
         </div>
@@ -87,70 +87,69 @@
     <!-- skills -->
 
     <section id="skills">
-      
       <div class="circle-container scroll-left">
         <div class="circle">
           <h1>Skills</h1>
         </div>
 
         <div class="dot">
-          <small style="--i:0"></small>
-          <small style="--i:1"></small>
-          <small style="--i:2"></small>
-          <small style="--i:3"></small>
-          <small style="--i:4"></small>
-          <small style="--i:5"></small>
-          <small style="--i:6"></small>
-          <small style="--i:7"></small>
-          <small style="--i:8"></small>
+          <small style="--i: 0"></small>
+          <small style="--i: 1"></small>
+          <small style="--i: 2"></small>
+          <small style="--i: 3"></small>
+          <small style="--i: 4"></small>
+          <small style="--i: 5"></small>
+          <small style="--i: 6"></small>
+          <small style="--i: 7"></small>
+          <small style="--i: 8"></small>
         </div>
       </div>
 
       <div class="icons scroll-scale">
         <div class="html" id="1">
-          <img src="icons/html.svg" alt="html">
+          <img src="icons/html.svg" alt="html" />
           <small class="lorem">
             <h4>HTML</h4>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
           </small>
         </div>
         <div class="css" id="2">
-          <img src="icons/css.svg" alt="css">
+          <img src="icons/css.svg" alt="css" />
           <small class="lorem">
             <h4>CSS</h4>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
           </small>
         </div>
         <div class="js" id="3">
-          <img src="icons/js.svg" alt="js">
+          <img src="icons/js.svg" alt="js" />
           <small class="lorem">
             <h4>JavaScript</h4>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
           </small>
         </div>
         <div class="react" id="4">
-          <img src="icons/react.svg" alt="react">
+          <img src="icons/react.svg" alt="react" />
           <small class="lorem">
             <h4>REACT</h4>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
           </small>
         </div>
         <div class="php" id="5">
-          <img src="icons/php.svg" alt="php">
+          <img src="icons/php.svg" alt="php" />
           <small class="lorem">
             <h4>PHP</h4>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
           </small>
         </div>
         <div class="laravel" id="6">
-          <img src="icons/laravel.svg" alt="laravel">
+          <img src="icons/laravel.svg" alt="laravel" />
           <small class="lorem">
             <h4>LARAVEL</h4>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
           </small>
         </div>
         <div class="database" id="7">
-          <img src="icons/my_sql.svg" alt="mySQL">
+          <img src="icons/my_sql.svg" alt="mySQL" />
           <small class="lorem">
             <h4>MySQL</h4>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
@@ -161,14 +160,18 @@
       <div class="show scroll-right">
         <small>&times;</small>
         <div class="show-icon">
-          <img src="icons/react.svg" alt="react">
+          <img src="icons/react.svg" alt="react" />
         </div>
         <div class="title-body">
           <h1 class="icon-title">REACT</h1>
-          <p class="body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, asperiores. Cum dicta eos aspernatur quibusdam magnam illum dolores ipsum, id amet distinctio! Accusantium fugiat alias possimus velit. Unde, quos corporis!</p>
+          <p class="body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt,
+            asperiores. Cum dicta eos aspernatur quibusdam magnam illum dolores
+            ipsum, id amet distinctio! Accusantium fugiat alias possimus velit.
+            Unde, quos corporis!
+          </p>
         </div>
       </div>
-      
     </section>
 
     <!-- portfolio -->
@@ -176,44 +179,21 @@
     <section id="portfolio">
       <h1 class="scroll-scale">Portfolio</h1>
 
-      <div class="card-container">
-        <button id="prev"><i class="fa-solid fa-angles-left"></i></button>
-
-        <div class="card-slider">
-          <div class="card">
-            <img src="images/music.png" alt="music" draggable="false" />
-          </div>
-          <div class="card">
-            <img
-              src="images/portfolio_bg.png"
-              alt="portfolio"
-              draggable="false"
-            />
-          </div>
-          <div class="card">
-            <img src="images/quiz_bg.png" alt="quiz_app" draggable="false" />
-          </div>
-          <div class="card">
-            <img
-              src="images/tic_tac_toe_bg.png"
-              alt="tic_tac_toe_app"
-              draggable="false"
-            />
-          </div>
-          <div class="card">
-            <img src="images/todo_list_bg.png" alt="todo" draggable="false" />
-          </div>
-          <div class="card">
-            <img
-              src="images/weather_app.png"
-              alt="weather_app"
-              draggable="false"
-            />
-          </div>
-        </div>
-
-        <button id="next"><i class="fa-solid fa-angles-right"></i></button>
-      </div>
+      <swiper-container
+        class="mySwiper"
+        pagination="true"
+        navigation="true"
+        loop="true"
+        pagination-dynamic-bullets="true"
+        grab-cursor="true"
+      >
+        <swiper-slide><img src="images/music.png" alt="music_img"></swiper-slide>
+        <swiper-slide><img src="images/portfolio_bg.png" alt="portfolio_img"></swiper-slide>
+        <swiper-slide><img src="images/quiz_bg.png" alt="quiz_img"></swiper-slide>
+        <swiper-slide><img src="images/tic_tac_toe_bg.png" alt="tic_tac_toe_img"></swiper-slide>
+        <swiper-slide><img src="images/todo_list_bg.png" alt="todo_list_bg"></swiper-slide>
+        <swiper-slide><img src="images/weather_app.png" alt="weather_img"></swiper-slide>
+      </swiper-container>
     </section>
 
     <!-- contact -->
@@ -242,7 +222,12 @@
         /><br />
 
         <label for="phone-num">Phone :</label><br />
-        <input type="tel" name="phone-num" id="phone-num" placeholder="Phone Number" /><br />
+        <input
+          type="tel"
+          name="phone-num"
+          id="phone-num"
+          placeholder="Phone Number"
+        /><br />
 
         <label for="message">Message :</label><br />
         <textarea
@@ -288,5 +273,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
   </body>
 </html>

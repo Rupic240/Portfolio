@@ -28,6 +28,14 @@ document.addEventListener('mousemove', (e) => {
   } 
 })
 
+//! Hide Navbar when mouseout................................
+
+document.addEventListener('mousedown', (e) => {
+  links.classList.remove('active');
+  menu.classList.remove('active');
+  nav.classList.remove('show-animation');
+})
+
 //! parallax............................................................
 
 const moveRight = document.getElementById('myimg');
@@ -49,11 +57,12 @@ window.addEventListener('scroll', () => {
     nav.style.top = '-60px';
   }
 
-  //! Remove active menu when scrolling..................................................
+  //! Remove active menu when scroll..................................................
 
   if (scrollVal) {
     links.classList.remove('active');
     menu.classList.remove('active');
+    nav.classList.remove('show-animation');
   }
 
   
@@ -81,9 +90,10 @@ window.addEventListener('scroll', () => {
 
     let ofsWidth = sec.offsetWidth;
 
-    if (ofsWidth <= 425) {
+    if (ofsWidth <= 627) {
       aboutImg.classList.remove('scroll-left');
       moveLeft.style.left = 0;
+      aboutImg.classList.add('scroll-scale');
     }
   });
 });
@@ -242,7 +252,7 @@ iconDiv.forEach((iconBtn) => {
     })
         
 
-    if (skillSection.offsetWidth <= 1025) {
+    if (skillSection.offsetWidth <= 768) {
       showBg.classList.add('active');
       showBg.classList.remove('scroll-right');
       showBg.classList.add('scroll-scale');
@@ -257,93 +267,151 @@ iconDiv.forEach((iconBtn) => {
 
 //! image slider ...............................................................
 
-document.addEventListener('DOMContentLoaded', () => {
-  const cardSlider = document.querySelector('.card-slider');
-  const cards = document.querySelectorAll('.card');
-  const moveBtn = document.querySelectorAll('.card-container button');
-  const cardWidth = cardSlider.querySelector('.card').offsetWidth;
-
-  let isDraging = false;
-  let startPoint = 0;
-  let startScrollLeft = 0;
-
-  moveBtn.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      infiniteLoop();
-      cardSlider.scrollLeft += btn.id === 'prev' ? -cardWidth : cardWidth;
-    });
-  });
-
-  const cloneCards = [...cards].map((clone) => clone.cloneNode(true));
-  cloneCards.forEach((card) => {
-    cardSlider.appendChild(card);
-  });
-
-  const startDraging = (e) => {
-    isDraging = true;
-    cardSlider.classList.add('dragging');
-    startPoint = e.pageX;
-    startScrollLeft = cardSlider.scrollLeft;
-  };
-
-  const draging = (e) => {
-    if (!isDraging) return;
-    cardSlider.scrollLeft = startScrollLeft - (e.pageX - startPoint);
-  };
-
-  const stopDraging = () => {
-    isDraging = false;
-    cardSlider.classList.remove('dragging');
-  };
-
-  const infiniteLoop = () => {
-    if (cardSlider.scrollLeft === 0) {
-      cardSlider.classList.add('no-tran');
-      cardSlider.scrollLeft =
-        cardSlider.scrollWidth - 2 * cardSlider.offsetWidth;
-      cardSlider.classList.remove('no-tran');
-    } else if (
-      Math.ceil(cardSlider.scrollLeft) ===
-      cardSlider.scrollWidth - cardSlider.offsetWidth
-    ) {
-      cardSlider.classList.add('no-tran');
-      cardSlider.scrollLeft = cardSlider.offsetWidth;
-      cardSlider.classList.remove('no-tran');
-    }
-  };
-
-
-  const navAnimation = () => {
-
-    let interval;
-
-    const startAni = () => {
-      interval = setInterval(() => {
-        cardSlider.scrollLeft += cardWidth;
-      }, 3000);
-    }
-    startAni();
-
-    const stopAni = () => {
-      clearInterval(interval);
-    }
-
-    cardSlider.addEventListener('mouseover', stopAni);
-    cardSlider.addEventListener('mouseleave', startAni);
-    moveBtn.forEach(btn => {
-      btn.addEventListener('mouseover', stopAni);
-      btn.addEventListener('mouseleave', startAni);
-    })
-
-  };
-
-  navAnimation();
-  
-  cardSlider.addEventListener('mousedown', startDraging);
-  cardSlider.addEventListener('mousemove', draging);
-  cardSlider.addEventListener('mouseup', stopDraging);
-  cardSlider.addEventListener('scroll', infiniteLoop);
+const swiperEl = document.querySelector('swiper-container');
+Object.assign(swiperEl, {
+  slidesPerView: 3,
+  spaceBetween: 50,
+  pagination: {
+    clickable: true,
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    425: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 50,
+    },
+    1440: {
+      slidesPerView: 4,
+      spaceBetween: 50,
+    },
+  },
 });
+swiperEl.initialize();
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const cardSlider = document.querySelector('.card-slider');
+//   const cards = document.querySelectorAll('.card');
+//   const moveBtn = document.querySelectorAll('.card-container button');
+//   const cardWidth = cardSlider.querySelector('.card').offsetWidth;
+
+//   let isDraging = false;
+//   let startPoint = 0;
+//   let startScrollLeft = 0;
+
+//   moveBtn.forEach((btn) => {
+//     btn.addEventListener('click', () => {
+//       infiniteLoop();
+//       cardSlider.scrollLeft += btn.id === 'prev' ? -cardWidth : cardWidth;
+//     });
+//   });
+
+//   const cloneCards = [...cards].map((clone) => clone.cloneNode(true));
+//   cloneCards.forEach((card) => {
+//     cardSlider.appendChild(card);
+//   });
+
+//   const startDraging = (e) => {
+//     isDraging = true;
+//     cardSlider.classList.add('dragging');
+//     startPoint = e.pageX;
+//     startScrollLeft = cardSlider.scrollLeft;
+//   };
+
+//   const draging = (e) => {
+//     if (!isDraging) return;
+//     cardSlider.scrollLeft = startScrollLeft - (e.pageX - startPoint);
+//   };
+
+//   const stopDraging = () => {
+//     isDraging = false;
+//     cardSlider.classList.remove('dragging');
+//   };
+
+//   const infiniteLoop = () => {
+//     if (cardSlider.scrollLeft === 0) {
+//       switch (cardSlider.offsetWidth) {
+//         case 561:
+//           cardSlider.classList.add('no-tran');
+//           cardSlider.scrollLeft =
+//             cardSlider.scrollWidth - 3 * cardSlider.offsetWidth;
+//           cardSlider.classList.remove('no-tran');
+//           break;
+//         case 299:
+//           cardSlider.classList.add('no-tran');
+//           cardSlider.scrollLeft =
+//             cardSlider.scrollWidth - 6 * cardSlider.offsetWidth;
+//           cardSlider.classList.remove('no-tran');
+//           break;
+//         default:
+//           cardSlider.classList.add('no-tran');
+//           cardSlider.scrollLeft =
+//             cardSlider.scrollWidth - 2 * cardSlider.offsetWidth;
+//           cardSlider.classList.remove('no-tran');
+//           break;
+//       }
+//     } else if (
+//       Math.ceil(cardSlider.scrollLeft) ===
+//       cardSlider.scrollWidth - cardSlider.offsetWidth
+//     ) {
+//       switch (cardSlider.offsetWidth) {
+//         case 561:
+//           cardSlider.classList.add('no-tran');
+//           cardSlider.scrollLeft = 2 * cardSlider.offsetWidth;
+//           cardSlider.classList.remove('no-tran');
+//           break;
+//         case 299:
+//           cardSlider.classList.add('no-tran');
+//           cardSlider.scrollLeft = 5 * cardSlider.offsetWidth;
+//           cardSlider.classList.remove('no-tran');
+//           break;
+//         default:
+//           cardSlider.classList.add('no-tran');
+//           cardSlider.scrollLeft = cardSlider.offsetWidth;
+//           cardSlider.classList.remove('no-tran');
+//           break;
+//       }
+//     }
+//   };
+
+
+//   const navAnimation = () => {
+
+//     let interval;
+
+//     const startAni = () => {
+//       interval = setInterval(() => {
+//         cardSlider.scrollLeft += cardWidth;
+//       }, 3000);
+//     }
+//     startAni();
+
+//     const stopAni = () => {
+//       clearInterval(interval);
+//     }
+
+//     cardSlider.addEventListener('mouseover', stopAni);
+//     cardSlider.addEventListener('mouseleave', startAni);
+//     moveBtn.forEach(btn => {
+//       btn.addEventListener('mouseover', stopAni);
+//       btn.addEventListener('mouseleave', startAni);
+//     })
+
+//   };
+
+//   navAnimation();
+  
+//   cardSlider.addEventListener('mousedown', startDraging);
+//   cardSlider.addEventListener('mousemove', draging);
+//   cardSlider.addEventListener('mouseup', stopDraging);
+//   cardSlider.addEventListener('scroll', infiniteLoop);
+// });
 
 //! links................................................................
 
