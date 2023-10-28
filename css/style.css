@@ -767,23 +767,46 @@ footer p {
     letter-spacing: 2px;
 }
 
-footer #go-top {
+#go-top {
     cursor: pointer;
-    position: absolute;
-    right: 5%;
-    width: 30px;
-    height: 30px;
-    background: var(--cyan);
-    border: none;
-    border-radius: 3px;
-    font-size: .8em;
-    font-weight: 600;
-    transition: .5s ease;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.2em;
+    border: 1.5px solid var(--cyan);
+    color: var(--cyan);
+    background: transparent;
+    z-index: 500;
+    opacity: 0;
+    transition: .5s ease-in-out;
 }
 
-footer #go-top:hover {
+#go-top.active {
+    opacity: 1;
+    transform: translateY(300px);
+    animation: bounce 1s linear forwards;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(300px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+#go-top:hover {
     opacity: 0.8;
-    background: var(--orange);
+    background: var(--cyan);
+    color: var(--black);
+    border: 1.5px solid var(--black);
 }
 
 

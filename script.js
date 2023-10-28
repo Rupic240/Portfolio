@@ -53,8 +53,10 @@ window.addEventListener('scroll', () => {
 
   if (scrollVal < prevScroll) {
     nav.style.top = 0;
+    goTop.classList.remove('active');
   } else {
     nav.style.top = '-60px';
+    goTop.classList.add('active');
   }
 
   //! Remove active menu when scroll..................................................
@@ -265,6 +267,58 @@ iconDiv.forEach((iconBtn) => {
   });
 });
 
+
+
+//! links................................................................
+
+const linkedin = document.getElementById('linkedin');
+
+linkedin.addEventListener('click', () => {
+  window.location.href = 'https://www.linkedin.com/in/swan-htet-103334283/';
+});
+
+const github = document.getElementById('github');
+
+github.addEventListener('click', () => {
+  window.location.href = 'https://github.com/Rupic240';
+});
+
+const facebook = document.getElementById('fb');
+
+facebook.addEventListener('click', () => {
+  window.location.href =
+    'https://www.facebook.com/profile.php?id=100049234651725';
+});
+
+const instagram = document.getElementById('insta');
+
+instagram.addEventListener('click', () => {
+  window.location.href = 'https://www.instagram.com/_rupicflynn_/';
+});
+
+const emailButton = document.getElementById('mail');
+
+emailButton.addEventListener('click', () => {
+  const email = 'swanhtetpaing240@gmail.com';
+  const subject = 'Hello! Hire Me';
+  const body = '';
+
+  const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
+    subject
+  )}&body=${encodeURIComponent(body)}`;
+
+  window.location.href = mailtoLink;
+});
+
+
+//! go to home page................................................................
+
+const goTop = document.getElementById('go-top');
+
+goTop.addEventListener('click', () => {
+  window.scrollTo(0, 0);
+});
+
 //! image slider ...............................................................
 
 const swiperEl = document.querySelector('swiper-container');
@@ -412,53 +466,3 @@ swiperEl.initialize();
 //   cardSlider.addEventListener('mouseup', stopDraging);
 //   cardSlider.addEventListener('scroll', infiniteLoop);
 // });
-
-//! links................................................................
-
-const linkedin = document.getElementById('linkedin');
-
-linkedin.addEventListener('click', () => {
-  window.location.href = 'https://www.linkedin.com/in/swan-htet-103334283/';
-});
-
-const github = document.getElementById('github');
-
-github.addEventListener('click', () => {
-  window.location.href = 'https://github.com/Rupic240';
-});
-
-const facebook = document.getElementById('fb');
-
-facebook.addEventListener('click', () => {
-  window.location.href =
-    'https://www.facebook.com/profile.php?id=100049234651725';
-});
-
-const instagram = document.getElementById('insta');
-
-instagram.addEventListener('click', () => {
-  window.location.href = 'https://www.instagram.com/_rupicflynn_/';
-});
-
-const emailButton = document.getElementById('mail');
-
-emailButton.addEventListener('click', () => {
-  const email = 'swanhtetpaing240@gmail.com';
-  const subject = 'Hello! Hire Me';
-  const body = '';
-
-  const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-    subject
-  )}&body=${encodeURIComponent(body)}`;
-
-  window.location.href = mailtoLink;
-});
-
-
-//! go to home page................................................................
-
-const goTop = document.getElementById('go-top');
-
-goTop.addEventListener('click', () => {
-  window.scrollTo(0, 0);
-});
