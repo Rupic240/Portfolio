@@ -28,14 +28,6 @@ document.addEventListener('mousemove', (e) => {
   } 
 })
 
-//! Hide Navbar when mouseout................................
-
-document.addEventListener('mousedown', (e) => {
-  links.classList.remove('active');
-  menu.classList.remove('active');
-  nav.classList.remove('show-animation');
-})
-
 //! parallax............................................................
 
 const moveRight = document.getElementById('myimg');
