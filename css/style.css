@@ -162,7 +162,7 @@ body {
 
 #myimg {
     position: relative;
-    background-image: url(../images/gojo.jpg);
+    background-image: url(../images/coding.png);
     background-size: cover;
     background-position: center;
     width: 300px;
@@ -325,6 +325,7 @@ body {
     background: url(../images/skill_bg.png);
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     overflow: hidden;
     padding: 0 5%;
     z-index: 0;
