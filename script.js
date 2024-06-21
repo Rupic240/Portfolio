@@ -123,7 +123,7 @@ const downloadCv = () => {
   cv.classList.toggle('active');
 
   const fileUrl =
-    'https://drive.google.com/uc?export=download&id=1pRbsHK-OPjqLLoJ1VicaLL5Rp1XHISSV';
+    'https://drive.google.com/uc?export=download&id=1eAMrMfsypn44HmzsAQIi-OVOLoh0whG_';
   const fileName = 'cv_form.pdf';
 
   hiddenLink.href = fileUrl;
